@@ -1,4 +1,4 @@
-# CLIP 
+# CLIPstyler
 <p align="center">
 <img src="./assets/model_description.png" width="600"/>
 </p> 
@@ -10,10 +10,10 @@ This is quick reimplementation of CLIPstyler.
 
 # Results
 <p align="center">
-<img src="./assets/inference_Fire.png" width="600" />
+<img src="./assets/inference_Fire.png" width="400" />
 </p> 
 <p align="center">
-<img src="./assets/inference_GreenCrystal.png" width="600" />
+<img src="./assets/inference_GreenCrystal.png" width="400" />
 </p> 
 
 
