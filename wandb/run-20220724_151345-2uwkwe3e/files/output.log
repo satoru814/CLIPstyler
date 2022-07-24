@@ -1,8 +1,0 @@
-Traceback (most recent call last):
-  File "main.py", line 28, in <module>
-    main()
-  File "main.py", line 22, in main
-    clipstyler.train()
-  File "/home/acd13642rm/project_me/CLIPstyler/CLIPstyler.py", line 100, in train
-    target_features = utils.get_features(utils.img_normalize_vgg(self.target), self.VGG)
-TypeError: img_normalize_vgg() missing 1 required positional argument: 'device'
