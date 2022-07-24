@@ -1,6 +1,4 @@
 class CFG:
-    # DATA_PATH = "/groups/gcd50697/sakamoto/project/CLIP"
-    # DF_PATH = DATA_PATH+"/captions.csv"
     MODEL_SAVE_PATH = "./outs/weight.pth"
 
     wandb = {"project":"CLIPstyler",
@@ -11,7 +9,7 @@ class CFG:
     content_path = "./data/face.jpeg"
     save_inference_path = "./outs/inference.png"
     img_size = 512
-    text = "Green crystal"
+    text = "Fire"
     source = "a Photo"
     crop_n = 4
     step = 200
@@ -19,4 +17,3 @@ class CFG:
     lambda_grob = 100
     lambda_content = 1
     lambda_patch = 0
-    sakamoto = ""

@@ -4,7 +4,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 from torch.utils.data import DataLoader
 from torchvision import transforms, models
-
+from torchvision.transforms.functional import adjust_contrast
 import albumentations as A
 from albumentations.pytorch import ToTensorV2
 
@@ -72,13 +72,13 @@ class CLIPstyler():
             tokens_features = clip.tokenize(template_text_target).to(self.device)
             text_features = clip_model.encode_text(tokens_features).detach()
             text_features = text_features.mean(axis=0, keepdim=True)
-            text_features = text_features.norm(dim=-1, keepdim=True)
+            text_features /= text_features.norm(dim=-1, keepdim=True)
 
             template_text_source = utils.compose_text_with_templates(self.source)
             tokens_source = clip.tokenize(template_text_source).to(self.device)
             text_source = clip_model.encode_text(tokens_source).detach()
             text_source = text_source.mean(axis=0, keepdim=True)
-            text_source = text_source.norm(dim=-1, keepdim=True)
+            text_source /= text_source.norm(dim=-1, keepdim=True)
 
             source_features = clip_model.encode_image(utils.img_normalize_clip(self.content_img, self.device))
             source_features /= (source_features.clone().norm(dim=-1, keepdim=True))
@@ -147,9 +147,11 @@ class CLIPstyler():
     def inference(self):
         fig,ax = plt.subplots(1,2)
         content_img_arr = self.content_img.detach().cpu().numpy()
-        target_img_arr = self.target.detach().cpu().numpy()
+        target_img_arr = adjust_contrast(self.target, 1.5).detach().cpu().numpy()
         content_img_arr = content_img_arr.squeeze(0).transpose(1,2,0)
         target_img_arr = target_img_arr.squeeze(0).transpose(1,2,0)
         ax[0].imshow(content_img_arr)
+        ax[0].title("Original")
         ax[1].imshow(target_img_arr)
+        ax[0].title("Fire")
         plt.savefig(self.save_inference_path)

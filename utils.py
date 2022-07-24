@@ -98,28 +98,3 @@ def get_features(img, model, layers=None):
 
 def compose_text_with_templates(text, templates=imagenet_templates):
     return [template.format(text) for template in templates]
-
-
-# def make_assets():
-#     df = pd.read_csv(CFG.DF_PATH)
-#     imgs = df["image_paths"].values
-#     captions = df["caption"].values
-#     fig,ax = plt.subplots(3,2, figsize=(10, 8))
-#     fig.suptitle("Dataset images and captions")
-#     last_imgname = ""
-#     i = 0
-#     show_n = 0
-#     while show_n < 9:
-#         img_filename = imgs[i]
-#         caption = captions[i]
-#         if img_filename != last_imgname:
-#             img = cv2.imread(img_filename)
-#             img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-#             ax[show_n//3, show_n%2].imshow(img)
-#             ax[show_n//3, show_n%2].set_title(caption, fontsize=7)
-#             ax[show_n//3, show_n%2].axis("off")
-#             show_n += 1
-#             last_imgname = img_filename
-#         else:
-#             i += 1
-#     plt.savefig("./assets/dataset.png")

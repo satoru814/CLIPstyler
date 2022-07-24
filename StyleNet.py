@@ -74,8 +74,7 @@ class UNet(nn.Module):
         self.up3 = UpBlock(nb_filter[2]+nb_filter[3], nb_filter[2])
         self.up2 = UpBlock(nb_filter[1]+nb_filter[2], nb_filter[1])
         self.conv_fin = nn.Sequential(
-            nn.Conv2d(nb_filter[1], nb_filter[0], 1, 1, 0),
-            nn.Conv2d(nb_filter[0], output_channel, 1, 1, 0),
+            nn.Conv2d(nb_filter[1], output_channel, 1, 1, 0),
             )
         self.sigmoid = nn.Sigmoid()
     def forward(self, x):
