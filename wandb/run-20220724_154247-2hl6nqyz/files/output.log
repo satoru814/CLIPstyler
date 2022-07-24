@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "main.py", line 28, in <module>
+    main()
+  File "main.py", line 22, in main
+    clipstyler.train()
+  File "/home/acd13642rm/project_me/CLIPstyler/CLIPstyler.py", line 98, in train
+    self.target = self.style_net(self.content_img)
+  File "/home/acd13642rm/anaconda3/envs/ml/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1110, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/acd13642rm/project_me/CLIPstyler/StyleNet.py", line 86, in forward
+    x_middle = self.middle(x3_1)
+  File "/home/acd13642rm/anaconda3/envs/ml/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1185, in __getattr__
+    raise AttributeError("'{}' object has no attribute '{}'".format(
+AttributeError: 'UNet' object has no attribute 'middle'

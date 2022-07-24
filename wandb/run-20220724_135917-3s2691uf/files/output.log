@@ -1,0 +1,17 @@
+Traceback (most recent call last):
+  File "main.py", line 28, in <module>
+    main()
+  File "main.py", line 22, in main
+    clipstyler.train()
+  File "/home/acd13642rm/project_me/CLIPstyler/CLIPstyler.py", line 136, in train
+    wandb.log({"patch_loss_hist":wandb.Histogram(loss_temp)})
+  File "/home/acd13642rm/anaconda3/envs/ml/lib/python3.8/site-packages/wandb/sdk/data_types/histogram.py", line 77, in __init__
+    self.histogram, self.bins = np.histogram(sequence, bins=num_bins)
+  File "<__array_function__ internals>", line 180, in histogram
+  File "/home/acd13642rm/anaconda3/envs/ml/lib/python3.8/site-packages/numpy/lib/histograms.py", line 791, in histogram
+    a, weights = _ravel_and_check_weights(a, weights)
+  File "/home/acd13642rm/anaconda3/envs/ml/lib/python3.8/site-packages/numpy/lib/histograms.py", line 285, in _ravel_and_check_weights
+    a = np.asarray(a)
+  File "/home/acd13642rm/anaconda3/envs/ml/lib/python3.8/site-packages/torch/_tensor.py", line 732, in __array__
+    return self.numpy()
+TypeError: can't convert cuda:0 device type tensor to numpy. Use Tensor.cpu() to copy the tensor to host memory first.

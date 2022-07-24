@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "main.py", line 28, in <module>
+    main()
+  File "main.py", line 22, in main
+    clipstyler.train()
+  File "/home/acd13642rm/project_me/CLIPstyler/CLIPstyler.py", line 64, in train
+    wandb.watch(models=(self.Net), log_freq=100)
+AttributeError: 'CLIPstyler' object has no attribute 'Net'

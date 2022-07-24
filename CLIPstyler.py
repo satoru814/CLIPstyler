@@ -110,6 +110,7 @@ class CLIPstyler():
             img_direction /= img_direction.clone().norm(dim=-1, keepdim=True)
             
             text_direction = (text_features - text_source).repeat(img_direction.size(0), 1)
+            text_direction /= text_direction.norm(dim=-1, keepdim=True)
 
             loss_temp = 1 - torch.cosine_similarity(img_direction, text_direction, dim=1)
             # loss_temp[loss_temp<self.patch_threshold] = 0

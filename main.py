@@ -1,5 +1,5 @@
 import argparse
-from CLIPstyler import CLIP
+from CLIPstyler import CLIPstyler
 
 def parse_args():
     parser = argparse.ArgumentParser(description='CLIP')
@@ -11,16 +11,18 @@ def parse_args():
 
 def main():
     args = parse_args()
-    clip = CLIP(args)
+    clipstyler = CLIPstyler(args)
 
     #build model
-    clip.build_model()
+    print("build_model")
+    clipstyler.build_model()
 
     if args.train:
-        clip.train()
+        print("train start")
+        clipstyler.train()
     
     if args.inference:
-        clip.inference()
+        clipstyler.inference()
 
 if __name__=="__main__":
     main()

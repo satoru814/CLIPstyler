@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "main.py", line 28, in <module>
+    main()
+  File "main.py", line 22, in main
+    clipstyler.train()
+  File "/home/acd13642rm/project_me/CLIPstyler/CLIPstyler.py", line 83, in train
+    source_features = clip_model.encode_image(utils.img_normalize_clip(self.content_img, self.device))
+  File "/home/acd13642rm/anaconda3/envs/ml/lib/python3.8/site-packages/clip/model.py", line 341, in encode_image
+    return self.visual(image.type(self.dtype))
+  File "/home/acd13642rm/anaconda3/envs/ml/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1110, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/acd13642rm/anaconda3/envs/ml/lib/python3.8/site-packages/clip/model.py", line 228, in forward
+    x = x + self.positional_embedding.to(x.dtype)
+RuntimeError: The size of tensor a (257) must match the size of tensor b (50) at non-singleton dimension 1
