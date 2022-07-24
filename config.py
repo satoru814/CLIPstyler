@@ -9,7 +9,7 @@ class CFG:
     content_path = "./data/face.jpeg"
     save_inference_path = "./outs/inference.png"
     img_size = 512
-    text = "Fire"
+    text = "Green crystal"
     source = "a Photo"
     crop_n = 4
     step = 200
