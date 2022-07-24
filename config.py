@@ -19,3 +19,4 @@ class CFG:
     lambda_grob = 100
     lambda_content = 1
     lambda_patch = 0
+    sakamoto = ""
