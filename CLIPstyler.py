@@ -152,6 +152,8 @@ class CLIPstyler():
         target_img_arr = target_img_arr.squeeze(0).transpose(1,2,0)
         ax[0].imshow(content_img_arr)
         ax[0].set_title("Original")
+        ax[0].set_axis_off()
         ax[1].imshow(target_img_arr)
         ax[1].set_title(self.text)
+        ax[1].set_axis_off()
         plt.savefig(self.save_inference_path)
