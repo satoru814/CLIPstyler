@@ -1,1 +1,0 @@
-{"total_loss": 1.4874544143676758, "patch_loss": 0.9443359375, "grobal_loss": 0.54296875, "content_loss": 14.971822738647461, "_timestamp": 1658637339, "_runtime": 32, "_step": 49, "_wandb": {"runtime": 34}}
